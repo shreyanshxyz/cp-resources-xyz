@@ -35,40 +35,41 @@ public:
     }
     }
 
+// Boolean Funtion isEmpty to check if the stack if empty or not.    
     bool isFull(){
-    if (top == 4)
+    if (top == 4) // We check if the top is 4 (since the stack will be full). If its 4, then it will be full.
     {
-        return true;
+        return true; // If yes it returns true
     }
     else
     {
-        return false;
+        return false; // Else it returns false
     }
     }
 
-    void Push (int v){
+    void Push (int v){ // Push function to insert an element into the Stack. It expects the element as "v".
       if (isFull())
       {
-          cout << "Stack Overflow";
+          cout << "Stack Overflow"; // If the Stack is empty then it returns "Stack Overflow".
       }
       else
       {
-          top++;
-          arr[top] = v;
+          top++;  // If the Stack is not empty then the value of top is pushed up by 1. 
+          arr[top] = v; // Then the value "v" is inserted into the array location of top.
       }
       }
 
-    int Pop()
+    int Pop() // Pop function is used to remove the last element of the Stack.
     {
         if(isEmpty())
         {
-            cout << "Stack Underflow";
+            cout << "Stack Underflow"; // If the Stack is empty, it returns stack underflow.
         }
         else{
-            int pval = arr[top];
-            arr[top] = 0;
-            top--;
-            return pval;
+            int pval = arr[top]; // We store the top variable in the variable pval.
+            arr[top] = 0; // We set the value of top (currently) to 0.  
+            top--; // Then we decrement the value of top by one to set the new top.
+            return pval; // Then we return the top variable which is stored in pval. It is the popped off value.
         }
     }
 
